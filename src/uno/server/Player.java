@@ -22,7 +22,7 @@ public class Player {
         return name;
     }
 
-    ArrayList<Card> cardsInHand = new ArrayList<>();
+    private ArrayList<Card> cardsInHand = new ArrayList<>();
 
     public void addCard(Card card) {
         cardsInHand.add(card);
