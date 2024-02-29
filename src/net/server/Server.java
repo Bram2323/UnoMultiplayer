@@ -14,7 +14,7 @@ public abstract class Server extends Thread implements MessageListener {
 	public Server(int port){
 		this.port = port;
 	}
-	
+
 
     public void run() {
         ServerSocket serverSocket = null;

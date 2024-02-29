@@ -51,7 +51,7 @@ public class Game {
         return Arrays.stream(players).filter(player -> player.getCardsInHand().isEmpty()).findFirst();
     }
 
-    private int getCurrentPlayer(){
+    public int getCurrentPlayer(){
         return currentPlayer;
     }
 }
