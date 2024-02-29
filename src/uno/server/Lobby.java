@@ -26,13 +26,23 @@ public class Lobby {
         });
 
         server.setOnPlayCard((playerId, card) -> {
-            game.playCard(getPlayerById(playerId).get(), card);
-            //TODO fix incorrect player
+            Optional<Player> player = getPlayerById(playerId);
+
+            if(player.isEmpty()){
+                throw new IllegalArgumentException("player unknown");
+            }
+
+            game.playCard(player.get(), card);
         });
 
         server.setOnDrawCard(playerId -> {
-            game.drawCard(getPlayerById(playerId).get());
-            //TODO fix incorrect player
+            Optional<Player> player = getPlayerById(playerId);
+
+            if(player.isEmpty()){
+                throw new IllegalArgumentException("player unknown");
+            }
+
+            game.drawCard(player.get());
         });
     }
 
