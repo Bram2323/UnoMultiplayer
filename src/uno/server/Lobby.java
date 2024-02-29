@@ -13,6 +13,8 @@ public class Lobby {
 
     public Lobby() {
         server.start();
+
+        initEvents();
     }
 
     private void initEvents() {
