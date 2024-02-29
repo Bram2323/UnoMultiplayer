@@ -16,7 +16,7 @@ public class ExampleServer extends Server {
 		while (true){
 			int clientID;
 			do {
-				System.out.println("To who do you want to send?");
+				System.out.println("To who do you want to be sending?");
 				if (input.hasNextInt()){
 					clientID = input.nextInt();
 					input.nextLine();
