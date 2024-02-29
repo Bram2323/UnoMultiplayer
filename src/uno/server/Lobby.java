@@ -19,8 +19,7 @@ public class Lobby {
 
     private void initEvents() {
         server.setOnHandshake((playerId, playerName) -> {
-            players.add(new Player());
-            //TODO player constructor undefined, add name/id later
+            players.add(new Player(playerId, playerName));
         });
 
         server.setOnStartGame(playerId -> {
