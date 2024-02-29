@@ -63,6 +63,14 @@ public class Lobby {
 
     private Optional<Player> getPlayerById(int id){
         //TODO fix when player::getId is fixed
-        return !players.isEmpty() ? Optional.of(players.getFirst()) : Optional.empty();
+        Player targetPlayer = null;
+
+        for(Player player : players){
+            if(true){
+                targetPlayer = player;
+            }
+        }
+
+        return Optional.ofNullable(targetPlayer);
     }
 }
