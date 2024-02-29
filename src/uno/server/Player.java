@@ -17,7 +17,7 @@ public class Player {
     }
 
     public boolean hasCard(Card card) {
-        return (!cardsInHand.isEmpty());
+        return (cardsInHand.contains(card));
     }
 
     public ArrayList<Card> getCardsInHand() {
