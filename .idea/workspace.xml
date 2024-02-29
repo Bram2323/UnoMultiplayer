@@ -5,12 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="07444ee6-974f-4279-a31d-8fd0a3f3f9f1" name="Changes" comment="Michel branch">
-      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UnoMultiplayer.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/net/server/Command.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/net/examples/ExampleClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/net/examples/ExampleClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/uno/server/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/uno/server/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/uno/server/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/uno/server/Player.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
