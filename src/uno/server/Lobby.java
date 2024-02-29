@@ -17,7 +17,7 @@ public class Lobby {
 
     private void initEvents() {
         server.setOnHandshake((playerId, playerName) -> {
-            addPlayer((new Player()));
+            players.add(new Player());
             //TODO player constructor undefined, add name/id later
         });
 
@@ -44,13 +44,6 @@ public class Lobby {
 
             game.drawCard(player.get());
         });
-    }
-
-    private void addPlayer(Player player){
-        players.add(player);
-
-        //private handshaked
-        //boardcast new player
     }
 
     private void startGame(){
