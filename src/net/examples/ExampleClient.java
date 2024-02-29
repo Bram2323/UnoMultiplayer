@@ -9,7 +9,7 @@ public class ExampleClient extends Client {
 
 
 	public static void main(String[] args){
-		ExampleClient client = new ExampleClient(IP, PORT);
+		ExampleClient client = new ExampleClient();
 		client.start();
 		
 		Scanner input = new Scanner(System.in);
@@ -23,8 +23,8 @@ public class ExampleClient extends Client {
 	}
 
 
-	public ExampleClient(String ip, int port){
-		super(ip, port);
+	public ExampleClient(){
+		super(IP, PORT);
 	}
 
 	@Override
