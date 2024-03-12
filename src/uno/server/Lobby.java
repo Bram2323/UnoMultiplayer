@@ -17,6 +17,7 @@ public class Lobby {
     private static final String STARTED_GAME_COMMAND = "StartedGame";
     private static final String UPDATE_STATUS_COMMAND = "UpdateStatus";
     private static final String PLAYERS_TURN_COMMAND = "PlayersTurn";
+    private static final String PLAYER_WON_COMMAND = "PlayerWon";
 
     private Game game;
     private boolean gameInProgress = false;
@@ -91,6 +92,12 @@ public class Lobby {
 
     private void broadcastGameState(){
         broadcastUpdateStatus();
+
+        if(game.getWinner().isPresent()){
+            broadcastPlayerWon(game.getWinner().get());
+            return;
+        }
+
         broadcastPlayersTurn();
     }
 
@@ -145,6 +152,10 @@ public class Lobby {
         Player currentPlayer = game.getCurrentPlayer();
 
         server.broadcastMessage(PLAYERS_TURN_COMMAND + PARAM_SEPERATOR + currentPlayer.getId());
+    }
+
+    private void broadcastPlayerWon(Player winningPlayer){
+        server.broadcastMessage(PLAYER_WON_COMMAND + PARAM_SEPERATOR + winningPlayer.getId());
     }
 
     private Optional<Player> getPlayerById(int id){
