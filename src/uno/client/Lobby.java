@@ -1,6 +1,7 @@
 package uno.client;
 
 import uno.client.args.*;
+import uno.common.cards.Card;
 
 import java.util.LinkedList;
 import java.util.Scanner;
@@ -13,6 +14,15 @@ public class Lobby {
     private static final String PLAYER_TURN_EVENT = "PlayersTurn";
     private static final String PLAYER_WON_EVENT = "PlayerWon";
 
+    private static final String HANDSHAKE_COMMAND = "Handshake";
+    private static final String START_GAME_COMMAND = "StartGame";
+    private static final String PLAY_CARD_COMMAND = "PlayCard";
+    private static final String DRAW_CARD_COMMAND = "DrawCard";
+
+    private final static String PARAM_SEPARATOR = "|";
+    private final static String ARRAY_SEPARATOR = "~,~";
+    private final static String OBJECT_SEPARATOR = "$,$";
+
     private UnoClient client;
     private Game game = null;
 
@@ -24,10 +34,14 @@ public class Lobby {
         playername = askPlayerName();
 
         client = new UnoClient(playername);
-        //client.start();
+        // client.start();
+
+        doHandshake();
 
         players = new LinkedList<>();
-    }
+
+        askStartGame();
+  }
 
     private String askPlayerName(){
         System.out.print("What is your name? ");
@@ -38,13 +52,21 @@ public class Lobby {
             String nameInput = scanner.nextLine();
 
             if(nameInput.isBlank()){
-                System.out.println("Name must have at least 1 characater");
+                System.out.println("Name must have at least 1 character");
                 continue;
             }
 
-            scanner.close();
             return nameInput;
         }
+    }
+
+    private void askStartGame(){
+      Scanner scanner = new Scanner(System.in);
+      String input = scanner.nextLine();
+
+      if (game == null) {
+        doStartGame();
+      }
     }
 
     private void initEvents(){
@@ -101,7 +123,6 @@ public class Lobby {
     private void onStartedGame(StartedGameEventArgs args){
         System.out.println("Game started!");
 
-
         game = new Game(getPlayerArray(), args.getPlayerOrder());
     }
 
@@ -132,7 +153,17 @@ public class Lobby {
     }
 
     private void onPlayerWon(PlayerWonEventArgs args){
-        game.playerWon(args.getWonPlayer());
+        /*
+        Optional<Card> turnResult = game.playerWon(args.getWonPlayer());
+
+        if(turnResult != null){{
+            if(turnResult.isPresent()){
+                doPlayCard(turnResult.get());
+            } else {
+                doDrawCard();
+            }
+        }
+        */
     }
 
     private Player[] getPlayerArray(){
