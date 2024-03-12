@@ -4,7 +4,6 @@ import uno.common.cards.Card;
 import uno.common.cards.Deck;
 
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.Optional;
 import java.util.Random;
 
@@ -51,7 +50,11 @@ public class Game {
         return Arrays.stream(players).filter(player -> player.getCardsInHand().isEmpty()).findFirst();
     }
 
-    private int getCurrentPlayer(){
-        return currentPlayer;
+    public Card getTopCard(){
+        return deck.getTopCard();
+    }
+
+    public Player getCurrentPlayer(){
+        return players[currentPlayer];
     }
 }

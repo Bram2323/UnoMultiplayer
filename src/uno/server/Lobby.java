@@ -86,7 +86,7 @@ public class Lobby {
             playerIdString.append(player.getId());
         }
 
-        server.broadcastMessage(STARTED_GAME_COMMAND + "|" + playerIdString);
+        server.broadcastMessage(STARTED_GAME_COMMAND + PARAM_SEPERATOR + playerIdString);
     }
 
     private void broadcastGameState(){
@@ -95,11 +95,11 @@ public class Lobby {
     }
 
     private void broadcastUpdateStatus(){
-        Card lastCard = null;//TODO get last card
+        Card topCard = game.getTopCard();
 
         for(Player player : players){
             String message = UPDATE_STATUS_COMMAND +
-                PARAM_SEPERATOR + lastCard +
+                PARAM_SEPERATOR + topCard +
                 PARAM_SEPERATOR + getPlayerCardString(player) +
                 PARAM_SEPERATOR + getPlayerCardCountString(player);
 
@@ -142,9 +142,9 @@ public class Lobby {
     }
 
     private void broadcastPlayersTurn(){
-        Player currentPlayer = null;//TODO get current player
+        Player currentPlayer = game.getCurrentPlayer();
 
-        server.broadcastMessage(PLAYERS_TURN_COMMAND + "|" + currentPlayer.getId());
+        server.broadcastMessage(PLAYERS_TURN_COMMAND + PARAM_SEPERATOR + currentPlayer.getId());
     }
 
     private Optional<Player> getPlayerById(int id){
