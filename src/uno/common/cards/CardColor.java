@@ -12,4 +12,8 @@ public enum CardColor {
         this.cardColorsStringValue = cardColorsStringValue;
     }
 
+    @Override
+    public String toString() {
+        return cardColorsStringValue;
+    }
 }

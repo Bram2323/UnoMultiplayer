@@ -2,14 +2,14 @@ package uno.common.cards;
 
 public class Card {
     // Fields
-    private CardColor cardColor;
-    private CardType cardType;
+    private final CardColor cardColor;
+    private final CardType cardType;
 
     // Constructor
     public Card(CardColor cardColor, CardType cardType) {
 
-        setCardColor(cardColor);
-        setCardType(cardType);
+        this.cardColor = cardColor;
+        this.cardType = cardType;
 
     }
 
@@ -18,16 +18,12 @@ public class Card {
         return cardColor;
     }
 
-    public void setCardColor(CardColor cardColor) {
-        this.cardColor =  cardColor;
-    }
-
     public CardType getCardType() {
         return cardType;
     }
 
-    public void setCardType(CardType cardType) {
-        this.cardType = cardType;
+    @Override
+    public String toString() {
+        return cardColor + " " + cardType;
     }
-
 }

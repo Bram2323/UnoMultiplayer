@@ -18,5 +18,8 @@ public enum CardType {
         this.cardTypeStringValue = cardTypeStringValue;
     }
 
-
+    @Override
+    public String toString() {
+        return cardTypeStringValue;
+    }
 }
