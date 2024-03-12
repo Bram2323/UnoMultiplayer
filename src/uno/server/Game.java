@@ -27,7 +27,7 @@ public class Game {
     }
 
     public void playCard(Player player, Card card) {
-        if(deck.canPlayCard(card)){
+        if(deck.canPlayCard(card) && player.hasCard(card)){
             deck.playCard(card);
             player.removeCard(card);
             nextPlayer();
