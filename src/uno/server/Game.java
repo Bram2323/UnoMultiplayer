@@ -31,7 +31,7 @@ public class Game {
             deck.playCard(card);
             player.removeCard(card);
             nextPlayer();
-        }else throw new IllegalArgumentException("Card should've been checked with deck.canPlayCard!");
+        }
     }
 
     public void drawCard(Player player) {
