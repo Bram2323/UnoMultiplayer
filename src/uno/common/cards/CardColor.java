@@ -6,10 +6,14 @@ public enum CardColor {
     BLUE("Blue"),
     YELLOW("Yellow");
 
-    final String cardColorsStringValue;
+    private final String cardColorStringValue;
 
     CardColor(String cardColorsStringValue) {
-        this.cardColorsStringValue = cardColorsStringValue;
+        this.cardColorStringValue = cardColorsStringValue;
+    }
+
+    public String getString(){
+        return cardColorStringValue;
     }
 
 }

@@ -28,6 +28,8 @@ public abstract class Client extends Thread {
 			return;
 		}
 
+		connectedToServer();
+
 		while (true){
 			try {
 				String message = in.readLine();
@@ -43,6 +45,8 @@ public abstract class Client extends Thread {
     public void sendMessage(String message) {
         out.println(message);
     }
+
+	public abstract void connectedToServer();
 
 	public abstract void receivedMessage(String message);
 }

@@ -18,5 +18,7 @@ public enum CardType {
         this.cardTypeStringValue = cardTypeStringValue;
     }
 
-
+    public String getString(){
+        return cardTypeStringValue;
+    }
 }
