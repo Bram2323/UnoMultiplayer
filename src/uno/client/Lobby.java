@@ -146,4 +146,21 @@ public class Lobby {
 
         return players;
     }
+
+    private void doHandshake(){
+        //client.sendMessage(HANDSHAKE_COMMAND + PARAM_SEPARATOR + playerName);
+    }
+
+    private void doStartGame(){
+        //client.sendMessage(START_GAME_COMMAND);
+    }
+
+    private void doPlayCard(Card card){
+        String cardString = card.getCardColor() + OBJECT_SEPARATOR + card.getCardType();
+        //client.sendMessage(PLAY_CARD_COMMAND + PARAM_SEPARATOR + cardString);
+    }
+
+    private void doDrawCard(){
+        //client.sendMessage(DRAW_CARD_COMMAND);
+    }
 }
