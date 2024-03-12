@@ -149,12 +149,8 @@ public class Lobby {
     }
 
     private void onPlayersTurn(PlayersTurnEventArgs args){
-        game.playerTurn(args.getTurnPlayer());
-    }
-
-    private void onPlayerWon(PlayerWonEventArgs args){
         /*
-        Optional<Card> turnResult = game.playerWon(args.getWonPlayer());
+        Optional<Card> turnResult = game.playerTurn(args.getTurnPlayer());
 
         if(turnResult != null){{
             if(turnResult.isPresent()){
@@ -164,6 +160,10 @@ public class Lobby {
             }
         }
         */
+    }
+
+    private void onPlayerWon(PlayerWonEventArgs args){
+        game.playerWon(args.getWonPlayer());
     }
 
     private Player[] getPlayerArray(){
